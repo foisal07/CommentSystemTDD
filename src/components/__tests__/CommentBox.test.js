@@ -1,10 +1,15 @@
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import CommentBox from "../CommentBox";
+import Root from "../../Root";
 
 let component;
 
 beforeEach(() => {
-  component = shallow(<CommentBox />);
+  component = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
 });
 
 it("render a textarea and a button", () => {

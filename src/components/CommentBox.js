@@ -7,8 +7,7 @@ export default function CommentBox() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Dispatch action to add comment in redux store
-    dispatch({ type: "SAVE_COMMENT", comment: comment });
+    dispatch({ type: "SAVE_COMMENT", payload: comment });
     setComment("");
   };
 
