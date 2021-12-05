@@ -1,8 +1,13 @@
 import { Provider } from "react-redux";
-import store from "./store/index";
+import { createStore } from "redux";
+import commentReducer from "./store/commentReducer";
 
-const Root = ({children}) => {
-  return <Provider store={store}>{children}</Provider>;
+const Root = ({ children, initialState }) => {
+  return (
+    <Provider store={createStore(commentReducer, initialState)}>
+      {children}
+    </Provider>
+  );
 };
 
 export default Root;
